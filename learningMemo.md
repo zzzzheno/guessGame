@@ -6,3 +6,4 @@
 ## 紀錄區
 1. createElement時，id 寫 id、class 要寫成 className。
 2. 宣告可以比較兩個值，比較後會以true或fals表示，如果想要把比較的結果轉成文字可以寫成 宣告名稱 ? "文字" : "文字"
+3. before：加在元素前面；appendChild：加在元素內；after：加在元素後面。
