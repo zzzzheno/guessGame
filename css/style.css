@@ -25,6 +25,7 @@ button, #formSubmit {
     padding: 12px 24px;
     background-color: #f5c714;
     border: solid 2px #000000;
+    border-radius: 0px;
     box-shadow: 2px 2px #000000;
     cursor: pointer;
 }
@@ -33,12 +34,14 @@ button:hover, #formSubmit:hover {
     letter-spacing: 20px;
     background-color: #000000;
     color: #f5c714;
+    border-radius: 0px;
     box-shadow: 0px 0px;
 }
 
 button:disabled, #formSubmit:disabled {
     opacity: 0.7;
     color: #000000;
+    border-radius: 0px;
     pointer-events: none;
 }
 
@@ -49,7 +52,7 @@ form {
 .guess {
     position: relative;
     text-align: center;
-    width: 402px;
+    width: 360px;
     padding: 48px 24px;
     background-color: #ffffff;
     border: solid 2px #000000;
@@ -67,11 +70,13 @@ form {
     padding: 8px 12px;
     font-size: 20px;
     border: solid 2px #000000;
+    border-radius: 0px;
 }
 
 #guessNumInput:disabled {
     background-color: rgba(0, 0, 0, 0.1);
     color: rgba(0, 0, 0, 0.4);
+    border-radius: 0px;
     pointer-events: none;
 }
 
