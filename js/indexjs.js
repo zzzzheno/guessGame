@@ -4,20 +4,31 @@ window.addEventListener("load", (event) => {
     const gameText2 = document.querySelector("#gameText2");
     const guessForm = document.querySelector("#guessForm");
     const br = document.createElement("br");
-    var guessCount = 10;   
-    var rate = 0;
+    let guessCount;
+    let rate;
 
     // 該局的猜測紀錄 start
-     const guessRecord = {
+    const guessRecord = {
         rate: [],
         num: [],
         memo: []
-     }
+    }
     // 該局的猜測紀錄 end
 
     // 產生隨機數字 start
-    const randomNum = Math.floor((Math.random() * 100) + 1);
-    console.log(randomNum);
+    let randomNum;
+
+    function initRound() {
+        randomNum = Math.floor((Math.random() * 100) + 1);
+        console.log(randomNum);
+        guessCount = 10;
+        rate = 0;
+        guessRecord.rate = [];
+        guessRecord.num = [];
+        guessRecord.memo = [];
+    }
+
+    initRound();
     // 產生隨機數字 end
     
     // 建立輸入數字的input start
@@ -43,14 +54,14 @@ window.addEventListener("load", (event) => {
     replay.type = "button";
     replay.value = "重新開始";
     replay.onclick = function replayGame(){
-        guessCount = 10;
-        rate = 0;
-        guessRecord.rate = [];
-        guessRecord.num = [];
-        guessRecord.memo = [];
+        initRound();
         gameText2.innerText = "剩餘" + guessCount + "次";
-        errorMessage.remove();
-        successMessage.remove();
+        if (errorMessage.isConnected) {
+            errorMessage.remove();
+        }
+        if (successMessage.isConnected) {
+            successMessage.remove();
+        }
         guessNumInput.disabled = false;
         guessNumInput.value = "";
         formSubmit.disabled = false;
